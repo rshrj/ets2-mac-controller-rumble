@@ -1,0 +1,20 @@
+# Build outputs
+*.dylib
+*.o
+experimental/rumble_helper
+experimental/replay
+experimental/fake_telemetry
+
+# Runtime files written by the experimental helper
+experimental/rumble_helper.log
+experimental/recordings/
+
+# Files extracted from the game's data archives (SCS Software's content)
+experimental/reference/
+
+# Python
+.venv/
+__pycache__/
+
+# macOS
+.DS_Store

@@ -1,0 +1,5 @@
+-target
+x86_64-apple-macos11
+-std=c++17
+-Iscs_sdk/include
+-Iscs_sdk/include/common

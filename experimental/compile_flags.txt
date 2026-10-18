@@ -1,0 +1,8 @@
+-target
+x86_64-apple-macos11
+-I../scs_sdk/include
+-I../scs_sdk/include/common
+-I../scs_sdk/include/eurotrucks2
+-I../scs_sdk/include/amtrucks
+-I/opt/homebrew/include
+-DHELPER_PATH="rumble_helper"
