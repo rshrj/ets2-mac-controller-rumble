@@ -52,7 +52,27 @@ Simulator uses the same engine and might work too; it is untested.
 
 ## Install
 
-You need the Xcode Command Line Tools (`xcode-select --install`).
+### 1. Get the plugin
+
+**Download it** from the [latest release](https://github.com/rshrj/ets2-mac-controller-rumble/releases/latest).
+The simplest way is in Terminal, which saves it to your Downloads folder:
+
+```sh
+curl -L -o ~/Downloads/ets2_steam_input_fix.dylib \
+  https://github.com/rshrj/ets2-mac-controller-rumble/releases/latest/download/ets2_steam_input_fix.dylib
+```
+
+If you download it with a browser instead, macOS marks the file as
+quarantined, and the game won't be able to load it (macOS shows *"Apple could
+not verify … is free of malware"*). The plugin isn't signed with an Apple
+Developer ID, so clear that mark once:
+
+```sh
+xattr -d com.apple.quarantine ~/Downloads/ets2_steam_input_fix.dylib
+```
+
+**Or build it yourself.** You need the Xcode Command Line Tools
+(`xcode-select --install`):
 
 ```sh
 git clone https://github.com/rshrj/ets2-mac-controller-rumble.git
@@ -60,8 +80,9 @@ cd ets2-mac-controller-rumble
 make
 ```
 
-This builds `ets2_steam_input_fix.dylib`. Copy it into the game's `plugins`
-folder:
+### 2. Copy it into the game
+
+Put `ets2_steam_input_fix.dylib` into the game's `plugins` folder:
 
 1. In Steam, right-click **Euro Truck Simulator 2** → **Manage** → **Browse local files**.
 2. Right-click **Euro Truck Simulator 2.app** → **Show Package Contents**, then
@@ -70,9 +91,9 @@ folder:
    `ets2_steam_input_fix.dylib` in it.
 
 macOS normally blocks Terminal from writing inside other apps, which is why
-Finder is the easy way. If you have given your terminal the *App Management*
-permission (System Settings → Privacy & Security), `make install` does the
-same copy.
+Finder is the easy way. If you built it yourself and have given your terminal
+the *App Management* permission (System Settings → Privacy & Security),
+`make install` does the same copy.
 
 Make sure vibration is enabled both in the game's controller options and in
 Steam's settings for the controller.
